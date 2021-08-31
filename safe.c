@@ -19,5 +19,7 @@ int main(){
 	swag gold = {"Gold!", 1000000.0};
 	combination numbers = {&gold, "6502"};
 	safe s = {numbers, "RAMACON250"};
+
+	printf("Content: %s\n", s.numbers.swag->description);
 	return 0;
 }
