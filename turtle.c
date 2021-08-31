@@ -7,9 +7,9 @@ typedef struct{
 } turtle;
 
 void happy_birthday(turtle *t){
-	(*t).age++;
+	t->age++;
 	printf("Happy birthday, %s! Now you are %i years old!\n",
-	(*t).name, (*t).age);
+	t->name, t->age);
 }
 
 int main(){
