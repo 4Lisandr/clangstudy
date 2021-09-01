@@ -12,5 +12,9 @@ int main(){
 	island craggy = {"Craggy", "9:00", "17:00", NULL};
 	island nublar = {"Nublar", "9:00", "17:00", NULL};
 	island shutter = {"Shutter", "9:00", "17:00", NULL};
+
+	amity.next = &craggy;
+	craggy.next = &nublar;
+	nublar.next = &shutter;
 	return 0;
 }
