@@ -8,6 +8,9 @@ typedef struct island {
 } island;
 
 int main(){
-	
+	island amity = {"Amity", "9:00", "17:00", NULL};
+	island craggy = {"Craggy", "9:00", "17:00", NULL};
+	island nublar = {"Nublar", "9:00", "17:00", NULL};
+	island shutter = {"Shutter", "9:00", "17:00", NULL};
 	return 0;
 }
