@@ -24,10 +24,15 @@ island* create(char *name){
 }
 
 int main(){
-	island *amity = create("Amity");
-	island *craggy = create ("Craggy");
-	island *nublar = create("Nublar");
-	island *shutter = create("Shutter");
+	char name[80]; 
+	fgets(name, 80, stdin);
+	island *amity = create(name);
+	fgets(name, 80, stdin);
+	island *craggy = create (name);
+	fgets(name, 80, stdin);
+	island *nublar = create(name);
+	fgets(name, 80, stdin);
+	island *shutter = create(name);
 
 	amity->next = craggy;
 	craggy->next = nublar;
