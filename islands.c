@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct island {
 	char *name;
@@ -13,16 +14,26 @@ void display(island *start) {
 	}
 }
 
+island* create(char *name){
+	island *i = malloc(sizeof(island));
+	i->name = name;
+	i->opens = "09:00";
+	i->closes = "17:00";
+	i->next = NULL;
+	return i;
+}
+
 int main(){
-	island amity = {"Amity", "9:00", "17:00", NULL};
-	island craggy = {"Craggy", "9:00", "17:00", NULL};
-	island nublar = {"Nublar", "9:00", "17:00", NULL};
-	island shutter = {"Shutter", "9:00", "17:00", NULL};
+	island *amity = create("Amity");
+	island *craggy = create ("Craggy");
+	island *nublar = create("Nublar");
+	island *shutter = create("Shutter");
 
-	amity.next = &craggy;
-	craggy.next = &nublar;
-	nublar.next = &shutter;
+	amity->next = craggy;
+	craggy->next = nublar;
+	nublar->next = shutter;
 
-	display(&amity);
+	display(amity);
 	return 0;
 }
+
