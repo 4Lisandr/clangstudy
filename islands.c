@@ -24,21 +24,19 @@ island* create(char *name){
 }
 
 int main(){
+	island *start = NULL;
+	island *i = NULL;
+	island *next = NULL;
 	char name[80]; 
-	fgets(name, 80, stdin);
-	island *amity = create(name);
-	fgets(name, 80, stdin);
-	island *craggy = create (name);
-	fgets(name, 80, stdin);
-	island *nublar = create(name);
-	fgets(name, 80, stdin);
-	island *shutter = create(name);
-
-	amity->next = craggy;
-	craggy->next = nublar;
-	nublar->next = shutter;
-
-	display(amity);
+	for (; fgets(name,80,stdin) != NULL; i = next){
+		next = create(name);
+		if (start == NULL)
+			start = next;
+		if(i != NULL)
+			i->next = next;
+	}
+	
+	display(start);
 	return 0;
 }
 
