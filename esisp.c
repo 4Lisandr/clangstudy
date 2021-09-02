@@ -66,7 +66,7 @@ int main() {
 				node *no_node = create(current->question);
 				current->no = no_node;
 				//Next question
-				printf("Ask me a question for %s, not for %s ",
+				printf("Ask me a question for %s, not for %s. ",
 				suspect, current->question);
 				fgets(question, 80, stdin);
 				current->question = strdup(question);
@@ -74,7 +74,7 @@ int main() {
 				break;
 			}
 		}
-	} while (yes_no("Next"));
+	} while (yes_no("Try again?"));
 	release(start_node);
 
 	return 0;
