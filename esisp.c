@@ -38,7 +38,7 @@ void release (node *n){
 int main() {
 	char question[80];
 	char suspect[40];
-	node *start_node = create("Does the suspect have a mustache?");
+	node *start_node = create("Does the suspect have a mustache");
 	start_node->no = create("Loretta");
 	start_node->yes = create("Ivan");
 
@@ -69,12 +69,13 @@ int main() {
 				printf("Ask me a question for %s, not for %s. ",
 				suspect, current->question);
 				fgets(question, 80, stdin);
+				free(current->question);
 				current->question = strdup(question);
 
 				break;
 			}
 		}
-	} while (yes_no("Try again?"));
+	} while (yes_no("Try again"));
 	release(start_node);
 
 	return 0;
