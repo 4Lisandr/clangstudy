@@ -37,7 +37,6 @@ int compare_names_desc(const void* a, const void* b){
 	return -compare_names(a,b);
 }
 
-
 int main(){
 
 	int scores[] = {543, 323, 32, 554, 11, 3, 112};
@@ -46,6 +45,13 @@ int main(){
 	puts("Sorted scores: ");
 	for (int i = 0; i < size; ++i){
 		printf("Score =  %i\n", scores[i]);
+	}
+
+	char* names[] = {"Adam", "Eva", "Bob", "Alice"};
+	qsort(names, 4, sizeof(char*), compare_names);
+	puts("Names: ");
+	for (int i = 0; i < 4; ++i)	{
+		printf("%s\n", names[i]);
 	}
 	
 	return 0;
