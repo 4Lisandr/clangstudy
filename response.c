@@ -31,7 +31,7 @@ int main(){
 		{"Matt", SECOND_CHANCE}, {"Bill", MARRIAGE}
 	};
 	for (int i = 0; i < 4; ++i){
-		(replies[r[i].type])(r[i]);
+		replies[r[i].type](r[i]);
 	}
 	return 0;
 }
