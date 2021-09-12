@@ -35,5 +35,7 @@ double total(int args, ...){
 
 int main(){
 	printf("%.2f\n",total(3, ZOMBIE, MONKEY_GLAND, FUZZY_NAVEL));
+	printf("%.2f\n",total(2, ZOMBIE, MONKEY_GLAND));
+	printf("%.2f\n",total(1, ZOMBIE));
 	return 0;
 }
